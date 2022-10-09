@@ -19,11 +19,22 @@ public class Company {
     this.staffs.addAll(staffs);
   }
 
-  public double totalSalary() {
-    return 0;
+  protected double totalSalary() {
+    double sum = 0;
+    for (Staff item : this.staffs) {
+      sum += item.grossSalary();
+    }
+    return sum;
   }
 
-  public void listStaffWorkingSeniority() {
-
+  protected void listStaffWorkingSeniority() {
+    System.out.print("--List staffs working Seniority more than 10 years:\n");
+    for (Staff item : this.staffs) {
+      int yearsOfService = Calendar.getInstance().get(Calendar.YEAR) - item.fromYear;
+      if (yearsOfService >= 10) {
+        System.out.print("    " + item.name + " - " + yearsOfService + " years working here");
+      }
+    }
+    System.out.println();
   } 
 }

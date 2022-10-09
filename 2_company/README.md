@@ -26,6 +26,7 @@
 
   Copy constructor & type convertion (Narrowing Casting) at class Worker & Officer
   ArrayList ~ DYNAMIC ARRAY, private email, improve addAll ...
+  static ~ GLOBAL VARIABLE
 
   JavaFX
 
