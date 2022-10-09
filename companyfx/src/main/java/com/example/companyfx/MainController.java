@@ -3,13 +3,15 @@ package com.example.companyfx;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+import static com.example.companyfx.MainApplication.companySalary;
+
 public class MainController {
     @FXML
     private Label salary;
 
     @FXML
     protected void onButton1() {
-        salary.setText("hihi");
+        salary.setText(String.valueOf(companySalary));
     }
 
     @FXML
