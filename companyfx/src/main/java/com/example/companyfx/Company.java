@@ -29,14 +29,19 @@ public class Company {
     return sum;
   }
 
-  protected void listStaffWorkingSeniority() {
+  protected String listStaffWorkingSeniority() {
+    String senior = "";
+
     System.out.print("--List staffs working Seniority more than 10 years:\n");
     for (Staff item : this.staffs) {
       int yearsOfService = Calendar.getInstance().get(Calendar.YEAR) - item.fromYear;
       if (yearsOfService >= 10) {
         System.out.print("    " + item.name + " - " + yearsOfService + " years working here");
+        // String / Dictionary
+        senior = senior + "    " + item.name + " - " + yearsOfService + " years working here";
       }
     }
     System.out.println();
+    return senior;
   } 
 }

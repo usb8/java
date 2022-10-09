@@ -10,6 +10,7 @@ import java.util.Arrays;
 
 public class MainApplication extends Application {
     static double companySalary;
+    static String senior;
     /*
     1. GLOBAL VARIABLE is obligated -->
       - dùng dc cho JavaFX - old version JDK
@@ -40,7 +41,7 @@ public class MainApplication extends Application {
 
         companySalary = company.totalSalary();
         System.out.print("\n--Total salary is: " + companySalary + " $\n");
-        company.listStaffWorkingSeniority();
+        senior = company.listStaffWorkingSeniority();
 
         launch();
     }

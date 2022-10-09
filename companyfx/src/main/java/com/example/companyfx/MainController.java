@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import static com.example.companyfx.MainApplication.companySalary;
+import static com.example.companyfx.MainApplication.senior;
 
 public class MainController {
     @FXML
@@ -19,6 +20,6 @@ public class MainController {
 
     @FXML
     protected void onButton2() {
-        seniority.setText("haha");
+        seniority.setText(senior);
     }
 }
