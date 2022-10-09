@@ -4,3 +4,4 @@ forme/
 note*.md
 
 *.class
+*/.idea/*
