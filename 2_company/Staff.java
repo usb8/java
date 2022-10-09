@@ -1,4 +1,6 @@
-public class Staff {
+import java.util.*;
+
+abstract class Staff {
   public String name;
   public int fromYear;
   private String email;
@@ -32,5 +34,16 @@ public class Staff {
       System.out.print("\n This email of " + this.name + " is NOT valid \n");
       this.email = "";
     }
+  }
+
+  // POLYMORPHISM & METHOD OVERRIDING & ABSTRACT METHOD
+  abstract double mainSalary();
+
+  protected double grossSalary() {
+    double mainSalary = this.mainSalary();
+    double compensation = 100 + 20 * (Calendar.getInstance().get(Calendar.YEAR) - this.fromYear);
+
+    this.salary = mainSalary + compensation;
+    return this.salary;
   }
 }
