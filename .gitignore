@@ -1,0 +1,6 @@
+*.git/
+
+forme/
+note*.md
+
+*.class
