@@ -1,4 +1,11 @@
 import java.util.*;
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import javafx.util.Pair;
 
 /*
 NOTE: Name of this class should be same with name of file
@@ -6,7 +13,7 @@ NOTE: If the file contains >= 2 class --> (In this case:)
   - Name of class below must be same with name of file
   - Class above must not use 'public'
 */
-public class Main {
+public class Main extends Application {
   static double companySalary;
   /* 
   1. GLOBAL VARIABLE is obligated -->
@@ -30,5 +37,29 @@ public class Main {
     companySalary = company.totalSalary();
     System.out.print("\n--Total salary is: " + companySalary + " $\n");
     company.listStaffWorkingSeniority();
+
+    launch(args);
+  }
+
+  @Override
+  public void start(Stage primaryStage) {
+    Dialog<Void> dialog = new Dialog<Void>();
+    dialog.setTitle("OAMK Company - autumn 2021");
+    dialog.setHeaderText("Total Salary is: ");
+
+    dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
+
+    GridPane grid = new GridPane();
+    grid.setHgap(10);
+    grid.setVgap(10);
+    grid.setPadding(new Insets(20, 150, 10, 10));
+
+    // grid.add(new Label("SALARY NUMBER"), 0, 0) ;
+    String stringCompanySalary = String.valueOf(companySalary);
+    grid.add(new Label(stringCompanySalary + " $"), 0, 0);
+
+    dialog.getDialogPane().setContent(grid);
+
+    dialog.showAndWait();
   }
 }
